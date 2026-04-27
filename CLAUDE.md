@@ -25,27 +25,48 @@ Le site est une **SPA (Single Page Application) statique** sans framework. Toute
 
 ```
 securexia-site/
-├── index.html        ← Structure HTML + head SEO
-├── style.css         ← Tous les styles
-├── script.js         ← Navigation, menu mobile, email, GHL
+├── index.html        ← Structure HTML + head SEO + toutes les pages
+├── style.css         ← Design system tokenisé + tous les composants
+├── script.js         ← Routing URL, menu mobile, email, GHL, scroll reveals
 ├── vercel.json       ← Config Vercel (headers CSP, SPA rewrites, cache)
+├── .gitignore        ← OS / éditeurs / .vercel / .env
 └── CLAUDE.md         ← Ce fichier
 ```
+
+## Stack et bibliothèques
+
+- **Pas de framework** — HTML/CSS/JS vanilla, SPA mono-fichier
+- **Google Fonts** : Syne (display) + DM Sans (body), preconnect dans le head
+- **Vercel Analytics + Speed Insights** : snippets dans le head, données accessibles via le dashboard Vercel
+- **GoHighLevel** : iframe pour le formulaire Audit Flash (page `/audit-flash`)
+- **IntersectionObserver** : animations scroll-reveal légères (`.reveal` + `.reveal-delay-N`)
 
 ### Pages disponibles (id des divs)
 
 | ID | URL logique | Contenu |
 |---|---|---|
-| `page-home` | / | Homepage — hero, problème, tunnel, offres |
+| `page-home` | / | Homepage — hero, problème, bento, tunnel, compare, principes, ressources, CTA |
 | `page-collectivites` | /collectivites | Page dédiée DST/élus |
 | `page-etablissements` | /etablissements | Établissements privés |
 | `page-programme` | /programme-commerce | Mairies & commerçants (B2B2B) |
 | `page-audit` | /audit-flash | Formulaire GHL + bénéfices |
 | `page-service` | /service | Notre service vs SaaS |
+| `page-ressources` | /ressources | Index articles / analyses |
+| `page-article-avis` | /ressources/avis-defavorable-commission | Article — Avis défavorable 48h |
+| `page-article-audit-7` | /ressources/audit-erp-7-points | Article — 7 points commission |
 | `page-apropos` | /a-propos | Équipe, vision, valeurs |
 | `page-cgv` | /cgv | Conditions générales de vente |
 | `page-mentions` | /mentions-legales | Mentions légales |
 | `page-confidentialite` | /confidentialite | Politique de confidentialité |
+| `page-404` | (fallback) | 404 — toute URL inconnue |
+
+### Routing URL
+
+`script.js` synchronise URL ↔ page via `history.pushState` :
+- Au chargement, `window.location.pathname` est résolu en `pageId` via la map `routes`
+- Toute route inconnue → `page-404` automatiquement
+- `popstate` (back/forward) restaure la bonne page sans rescroll
+- `vercel.json` `rewrites` envoie toute URL sans extension vers `index.html`, donc les deeplinks fonctionnent (ex: `/ressources/audit-erp-7-points`)
 
 ---
 

@@ -90,6 +90,11 @@
 <!-- ── FAVICON ── -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'><path d='M16 6 L84 6 Q94 6 94 16 L94 58 Q94 62 91 65 L54 110 Q50 114 46 110 L9 65 Q6 62 6 58 L6 16 Q6 6 16 6 Z' fill='%231B3A6B'/><g stroke='%23E8401C' stroke-width='7' stroke-linecap='square' fill='none'><line x1='32' y1='34' x2='68' y2='70'/><line x1='68' y1='34' x2='32' y2='70'/></g></svg>">
 <meta name="theme-color" content="#0F2347">
+<!-- ── VERCEL ANALYTICS + SPEED INSIGHTS ── -->
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
 
@@ -113,6 +118,7 @@
       <button class="nav-link" onclick="showPage('collectivites')">Collectivités</button>
       <button class="nav-link" onclick="showPage('etablissements')">Établissements privés</button>
       <button class="nav-link" onclick="showPage('programme')">Mairies & commerçants</button>
+      <button class="nav-link" onclick="showPage('ressources')">Ressources</button>
       <button class="nav-link" onclick="showPage('apropos')">À propos</button>
     </nav>
     <button class="nav-cta" onclick="showPage('audit')">Audit Flash gratuit</button>
@@ -125,6 +131,7 @@
     <button onclick="showPage('collectivites');toggleMenu()">Collectivités</button>
     <button onclick="showPage('etablissements');toggleMenu()">Établissements privés</button>
     <button onclick="showPage('programme');toggleMenu()">Mairies & commerçants</button>
+    <button onclick="showPage('ressources');toggleMenu()">Ressources</button>
     <button onclick="showPage('apropos');toggleMenu()">À propos</button>
     <button class="mobile-cta" onclick="showPage('audit');toggleMenu()">Audit Flash gratuit →</button>
   </div>
@@ -410,6 +417,33 @@
           <h3>La preuve, à tout moment.</h3>
           <p>Chaque prescription tracée, chaque document horodaté, chaque visite documentée. Vos données vous appartiennent et restent exportables intégralement sous 24 heures.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME — Ressources preview -->
+  <section class="home-ressources">
+    <div class="container">
+      <div class="home-ressources-head reveal">
+        <div>
+          <span class="eyebrow">Ressources</span>
+          <h2 class="section-title" style="margin-bottom:0;">Comprendre la conformité<br>avant qu'elle ne vous rattrape.</h2>
+        </div>
+        <button class="btn btn-ghost" onclick="showPage('ressources')">Toutes les ressources <span class="btn-arrow">→</span></button>
+      </div>
+      <div class="ressources-grid">
+        <a class="ressource-card reveal" onclick="showPage('article-avis')">
+          <div class="ressource-cat">Décryptage</div>
+          <h3>Avis défavorable de commission : que faire dans les 48 heures.</h3>
+          <p>Les bonnes décisions à prendre, le procès-verbal à décoder, les voies de recours et la feuille de route 30 jours pour reprendre la main.</p>
+          <div class="ressource-meta"><span>📖 8 min de lecture</span><span>·</span><span>Maires & DST</span></div>
+        </a>
+        <a class="ressource-card reveal reveal-delay-1" onclick="showPage('article-audit-7')">
+          <div class="ressource-cat">Méthode</div>
+          <h3>Les 7 points qui font basculer une commission de sécurité.</h3>
+          <p>Issues de secours, désenfumage, SSI, registre, contrôles électriques, formation, extincteurs — ce que la commission regarde vraiment.</p>
+          <div class="ressource-meta"><span>📖 9 min de lecture</span><span>·</span><span>Tous ERP</span></div>
+        </a>
       </div>
     </div>
   </section>
@@ -803,8 +837,43 @@
           <span>🔒 Gratuit · Sans engagement · Réponse sous 24 h</span>
         </div>
       </div>
-      <p style="font-size:13px;color:var(--gray-500);text-align:center;margin-top:14px;">Une question avant de remplir&nbsp;?
+
+      <div class="trust-strip">
+        <div class="trust-item">
+          <div class="ic">✓</div>
+          <div class="text">Données hébergées chez Microsoft, datacenters Europe</div>
+        </div>
+        <div class="trust-item">
+          <div class="ic">✓</div>
+          <div class="text">Conforme RGPD — accès, rectification, effacement</div>
+        </div>
+        <div class="trust-item">
+          <div class="ic">✓</div>
+          <div class="text">Aucune transmission à un tiers commercial</div>
+        </div>
+      </div>
+
+      <div class="next-steps">
+        <div class="next-steps-title">Ce qui se passe après l'envoi</div>
+        <div class="next-steps-list">
+          <div class="next-step">
+            <div class="num">1</div>
+            <div class="label"><strong>Sous 24 h</strong> — nous vous rappelons pour qualifier votre situation et planifier la visite.</div>
+          </div>
+          <div class="next-step">
+            <div class="num">2</div>
+            <div class="label"><strong>Sous 5 jours</strong> — notre consultant se déplace sur site pour l'Audit Flash (½ journée).</div>
+          </div>
+          <div class="next-step">
+            <div class="num">3</div>
+            <div class="label"><strong>Sous 5 jours après visite</strong> — vous recevez votre rapport complet et, si vous le souhaitez, un devis personnalisé sous 48 h.</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:13px;color:var(--gray-500);text-align:center;margin-top:18px;">Une question avant de remplir&nbsp;?
         <a href="#" onclick="openEmail();return false;">contact@securexia.fr</a>
+        · <a href="tel:+590690447360" style="color:var(--gray-500);text-decoration:none;border-bottom:1px solid var(--gray-300);padding-bottom:1px;">06 90 44 73 60</a>
       </p>
     </div>
   </div>
@@ -1072,6 +1141,289 @@
 </div>
 
 <!-- ════════════════════════════════════════
+     RESSOURCES — INDEX
+════════════════════════════════════════ -->
+<div id="page-ressources" class="page">
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="badge badge-light" style="margin-bottom:24px;">Ressources & analyses</span>
+      <h1>Comprendre la conformité,<br>avant qu'elle ne <em>vous rattrape.</em></h1>
+      <p>Décryptages réglementaires, méthodes terrain, cas pratiques. Pour les maires, DST, gestionnaires d'établissements et toutes les personnes en première ligne face à la commission.</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="page-content-inner">
+      <div class="section-head reveal">
+        <span class="eyebrow">Tous les articles</span>
+        <h2 class="section-title">Lectures pour décider<br>en connaissance.</h2>
+      </div>
+      <div class="ressources-grid">
+        <a class="ressource-card reveal" onclick="showPage('article-avis')">
+          <div class="ressource-cat">Décryptage</div>
+          <h3>Avis défavorable de commission : que faire dans les 48 heures.</h3>
+          <p>Les bonnes décisions à prendre, le procès-verbal à décoder, les voies de recours et la feuille de route 30 jours pour reprendre la main.</p>
+          <div class="ressource-meta"><span>📖 8 min de lecture</span><span>·</span><span>Maires & DST</span></div>
+        </a>
+        <a class="ressource-card reveal reveal-delay-1" onclick="showPage('article-audit-7')">
+          <div class="ressource-cat">Méthode</div>
+          <h3>Les 7 points qui font basculer une commission de sécurité.</h3>
+          <p>Issues de secours, désenfumage, SSI, registre, contrôles électriques, formation, extincteurs — ce que la commission regarde vraiment.</p>
+          <div class="ressource-meta"><span>📖 9 min de lecture</span><span>·</span><span>Tous ERP</span></div>
+        </a>
+      </div>
+
+      <div class="reveal" style="margin-top:80px;background:var(--off-white);border:1px solid var(--gray-100);border-radius:var(--r-lg);padding:40px 36px;">
+        <span class="eyebrow">Bientôt</span>
+        <h3 style="font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--navy);margin-bottom:12px;letter-spacing:-0.01em;line-height:1.2;">Les prochaines analyses</h3>
+        <p style="font-size:15px;color:var(--gray-600);line-height:1.65;margin-bottom:20px;">Catégories ERP — décrypter le classement de votre établissement · La responsabilité pénale du maire en cas d'incident · Le calendrier réel des commissions périodiques · Pré-visite : ce qu'on observe sur 100 ERP guadeloupéens.</p>
+        <p style="font-size:13.5px;color:var(--gray-500);">Pour être prévenu de la prochaine publication&nbsp;: <a href="#" onclick="openEmail();return false;">contact@securexia.fr</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <h2>Au-delà de la lecture,<br>une action concrète.</h2>
+      <p>L'Audit Flash transforme la théorie en plan d'action sur votre parc ERP réel.</p>
+      <div class="cta-band-actions">
+        <button class="btn btn-secondary btn-lg" style="color:var(--accent);" onclick="showPage('audit')">Demander mon Audit Flash <span class="btn-arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     ARTICLE 1 — Avis défavorable
+════════════════════════════════════════ -->
+<div id="page-article-avis" class="page">
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <button class="article-back" onclick="showPage('ressources')">← Toutes les ressources</button>
+      <div class="article-meta-top">
+        <span class="article-cat">Décryptage</span>
+        <span class="dot-sep"></span>
+        <span>8 min de lecture</span>
+        <span class="dot-sep"></span>
+        <span>Avril 2026</span>
+      </div>
+      <h1>Avis défavorable de commission&nbsp;: que faire dans les 48&nbsp;heures.</h1>
+      <p class="article-lede">Une commission peut sembler être une formalité. Un avis défavorable change tout&nbsp;: fermeture possible, responsabilité engagée, communication à organiser, échéances strictes. Voici les bonnes décisions, dans l'ordre, pour reprendre la main.</p>
+      <div class="article-byline">
+        <div class="article-byline-avatar">SX</div>
+        <div class="article-byline-info">
+          <div class="name">L'équipe SECUREXIA</div>
+          <div class="role">Conformité ERP · Guadeloupe</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="article-body">
+    <p>L'arrivée de la commission de sécurité dans un ERP est rarement une surprise totale. Sa décision, parfois si. Un avis défavorable n'est pas un simple courrier administratif&nbsp;: il déclenche un compte à rebours, expose une responsabilité, et peut entraîner la fermeture immédiate de l'établissement. Ce qui se joue dans les 48 heures qui suivent détermine souvent la suite des événements.</p>
+
+    <h2>Ce que dit vraiment un avis défavorable</h2>
+    <p>L'avis défavorable est rendu lorsque la commission constate des manquements suffisamment graves pour ne pas pouvoir attester de la sécurité du public dans l'établissement. Il est notifié par procès-verbal, signé par le président de la commission, et adressé à l'exploitant ainsi qu'au maire de la commune.</p>
+    <p>Trois situations principales aboutissent à cet avis&nbsp;:</p>
+    <ul>
+      <li>Un <strong>point rédhibitoire</strong> identifié&nbsp;: dispositif de sécurité incendie défaillant, issues de secours condamnées, désenfumage hors d'usage.</li>
+      <li>Un <strong>cumul d'anomalies</strong> qui, prises ensemble, compromettent la mise en sécurité du public.</li>
+      <li>Une <strong>absence de documents obligatoires</strong> empêchant la commission de se prononcer sur l'état réel de l'ERP.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">À retenir</div>
+      <p>Un avis défavorable n'entraîne pas <em>automatiquement</em> la fermeture. C'est le maire (ou le préfet pour certains ERP) qui prend l'arrêté de fermeture s'il estime nécessaire. Mais l'autorité de la commission est telle que le refus de prendre l'arrêté engage la responsabilité de celui qui s'en abstient.</p>
+    </div>
+
+    <h2>Les 48 premières heures</h2>
+    <p>Le délai entre la notification de l'avis et la décision administrative est court. Voici les actions à mener, dans l'ordre, dès la réception du procès-verbal.</p>
+
+    <h3>1. Lire le procès-verbal en entier</h3>
+    <p>Le PV liste précisément les <strong>points qui motivent l'avis</strong>. Chaque observation est rattachée à un article réglementaire (arrêté du 25 juin 1980 modifié, règlement de sécurité ERP). Ces références ne sont pas décoratives&nbsp;: elles définissent exactement le périmètre des travaux à réaliser.</p>
+
+    <h3>2. Identifier les points rédhibitoires</h3>
+    <p>Tous les manquements ne se valent pas. Distinguer&nbsp;:</p>
+    <ul>
+      <li>Les <strong>points bloquants immédiats</strong> qui justifient la fermeture (ex. système d'alarme inopérant, désenfumage non vérifié depuis plus d'un an).</li>
+      <li>Les <strong>prescriptions à délai</strong> qui peuvent être traitées dans les semaines suivantes sans impact opérationnel.</li>
+    </ul>
+
+    <h3>3. Prendre contact avec la mairie</h3>
+    <p>Le maire reçoit une copie du PV. C'est lui qui prendra (ou non) l'arrêté de fermeture. Un échange direct, factuel, présentant le plan d'action envisagé permet souvent de gagner du temps. Préparer pour cet échange&nbsp;: la liste des points, les délais de remise en conformité, les preuves d'engagement déjà mobilisées (devis, planning prestataires).</p>
+
+    <h3>4. Déclencher les prestataires techniques</h3>
+    <p>Les points liés aux installations (SSI, désenfumage, électricité) nécessitent l'intervention d'organismes ou d'entreprises spécialisés. <strong>Demander dès les premières heures les devis et plannings d'intervention</strong>&nbsp;: ce sont ces documents qui démontreront à la commission, lors de la contre-visite, que l'engagement de mise en conformité est sérieux.</p>
+
+    <h2>Décoder les voies de recours</h2>
+    <p>Trois recours existent contre un avis défavorable. Chacun obéit à des règles précises.</p>
+
+    <h3>Le recours gracieux</h3>
+    <p>Adressé au président de la commission de sécurité, il consiste à demander une nouvelle visite après mise en conformité partielle ou totale. C'est le recours le plus fréquemment utilisé&nbsp;: rapide, peu formel, il s'appuie sur la production de preuves de régularisation.</p>
+
+    <h3>Le recours hiérarchique</h3>
+    <p>Adressé au préfet, il conteste la décision de la commission. Plus rare, il s'applique lorsqu'on estime qu'une observation est mal fondée juridiquement.</p>
+
+    <h3>Le recours contentieux</h3>
+    <p>Devant le tribunal administratif, dans un délai de deux mois suivant la décision faisant grief (en général l'arrêté de fermeture, pas l'avis lui-même). Cette voie est lourde, longue, et rarement la plus efficace dans l'urgence.</p>
+
+    <blockquote>Dans 80&nbsp;% des cas, la solution n'est pas juridique. C'est une remise en conformité rapide et documentée, présentée à la commission lors d'une contre-visite.</blockquote>
+
+    <h2>La feuille de route 30 jours</h2>
+    <p>Au-delà des 48 premières heures, voici la séquence type pour aboutir à un avis favorable lors de la contre-visite.</p>
+    <ol>
+      <li><strong>Semaine 1</strong>&nbsp;— traitement des points rédhibitoires, devis signés, interventions planifiées sur les installations critiques.</li>
+      <li><strong>Semaine 2</strong>&nbsp;— réalisation des travaux et contrôles, collecte des attestations et rapports d'intervention.</li>
+      <li><strong>Semaine 3</strong>&nbsp;— mise à jour du registre de sécurité, vérification des documents annuels, formation rapide du personnel sur les consignes.</li>
+      <li><strong>Semaine 4</strong>&nbsp;— préparation du dossier de contre-visite&nbsp;: plan d'actions résolu, preuves photo, attestations, et demande formelle de nouvelle visite à la commission.</li>
+    </ol>
+
+    <h2>Comment éviter la prochaine fois</h2>
+    <p>Un avis défavorable n'arrive presque jamais par surprise pour qui connaît son ERP. Les anomalies relevées en commission existent souvent depuis des mois&nbsp;: ce qui manque, c'est un <strong>œil extérieur régulier</strong> et un <strong>suivi formalisé</strong> des prescriptions.</p>
+    <p>C'est précisément ce que SECUREXIA met en place&nbsp;: pré-visites annuelles, dossier commission tenu à jour, suivi des prescriptions avec dates et responsables. Le jour de la commission, il n'y a plus de surprise — il y a un dossier.</p>
+
+    <div class="article-end-cta">
+      <h3>Vous avez une commission qui approche&nbsp;?</h3>
+      <p>L'Audit Flash permet, en une demi-journée sur site, d'identifier les points qui pourraient justifier un avis défavorable. Gratuit, sans engagement.</p>
+      <button class="btn btn-primary btn-lg" onclick="showPage('audit')">Demander mon Audit Flash <span class="btn-arrow">→</span></button>
+    </div>
+  </article>
+
+  <div class="related-articles">
+    <div class="related-head">À lire ensuite</div>
+    <a class="ressource-card" onclick="showPage('article-audit-7')">
+      <div class="ressource-cat">Méthode</div>
+      <h3>Les 7 points qui font basculer une commission de sécurité.</h3>
+      <p>Issues de secours, désenfumage, SSI, registre, contrôles électriques, formation, extincteurs.</p>
+      <div class="ressource-meta"><span>📖 9 min</span><span>·</span><span>Tous ERP</span></div>
+    </a>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     ARTICLE 2 — Les 7 points
+════════════════════════════════════════ -->
+<div id="page-article-audit-7" class="page">
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <button class="article-back" onclick="showPage('ressources')">← Toutes les ressources</button>
+      <div class="article-meta-top">
+        <span class="article-cat">Méthode</span>
+        <span class="dot-sep"></span>
+        <span>9 min de lecture</span>
+        <span class="dot-sep"></span>
+        <span>Avril 2026</span>
+      </div>
+      <h1>Les 7 points qui font basculer<br>une commission de sécurité.</h1>
+      <p class="article-lede">La commission de sécurité ne vérifie pas tout, et elle ne note pas. Elle regarde sept points cardinaux. Quand l'un d'eux fait défaut, l'avis bascule. Voici la liste — et ce qu'il faut savoir pour chacun.</p>
+      <div class="article-byline">
+        <div class="article-byline-avatar">SX</div>
+        <div class="article-byline-info">
+          <div class="name">L'équipe SECUREXIA</div>
+          <div class="role">Conformité ERP · Guadeloupe</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="article-body">
+    <p>L'idée que la commission de sécurité contrôle tout, partout, en détail, est une légende. La visite dure souvent moins de deux heures. Le procès-verbal tient en quelques pages. Ce qui s'y joue est précis, et toujours autour des mêmes points. Connaître ces sept axes, c'est savoir où concentrer la préparation — et où porter l'attention quand on est commissionné soi-même.</p>
+
+    <h2>1. Les issues de secours</h2>
+    <p>Premier réflexe d'un commissionnaire&nbsp;: parcourir l'établissement <strong>en suivant le chemin d'évacuation</strong>. Dégagements obstrués, portes condamnées, signalétique manquante ou non lumineuse, blocs autonomes hors d'usage&nbsp;: chacun de ces constats peut suffire à un avis défavorable.</p>
+    <p>L'erreur fréquente&nbsp;: penser qu'un dégagement « habituellement libre » suffit. La commission constate <em>ce qu'elle voit le jour J</em>. Un carton stocké devant une issue, une chaise empilée contre une porte, et l'observation est inscrite au PV.</p>
+
+    <h2>2. Le désenfumage</h2>
+    <p>Souvent oublié parce qu'invisible. Le désenfumage (mécanique ou naturel) doit faire l'objet d'une <strong>vérification annuelle par un organisme agréé</strong>, conformément à l'arrêté du 25 juin 1980. La commission demandera l'attestation de la dernière vérification — pas un contrat de maintenance, l'attestation effective du dernier passage.</p>
+    <div class="callout">
+      <div class="callout-label">Erreur fréquente</div>
+      <p>Le contrat de maintenance n'est pas une preuve de vérification. Seule l'attestation datée et signée vaut. Si la dernière intervention remonte à plus de 12 mois, la commission le constate et l'inscrit.</p>
+    </div>
+
+    <h2>3. L'alarme incendie et le SSI</h2>
+    <p>Le système de sécurité incendie (SSI) est testé pendant la visite. Cela peut surprendre&nbsp;: la commission peut <strong>déclencher l'alarme</strong> pour vérifier qu'elle se diffuse partout, que les portes coupe-feu se ferment, que les sorties s'ouvrent.</p>
+    <p>Les points qui posent problème&nbsp;: une zone non couverte par les détecteurs, une centrale en défaut signalée mais non traitée, un report d'alarme défaillant, un essai SSI annuel non documenté.</p>
+
+    <h2>4. Le registre de sécurité</h2>
+    <p>Document obligatoire dans tout ERP. La commission le demande systématiquement. Il doit contenir, au minimum&nbsp;:</p>
+    <ul>
+      <li>Les <strong>caractéristiques de l'établissement</strong> (catégorie, type, effectif).</li>
+      <li>Les <strong>vérifications réglementaires périodiques</strong> et leurs résultats.</li>
+      <li>Les <strong>travaux d'aménagement et de transformation</strong>, avec dates et entreprises.</li>
+      <li>Les <strong>exercices d'évacuation</strong> et leur déroulement.</li>
+      <li>Les <strong>consignes</strong> en cas d'incendie.</li>
+    </ul>
+    <p>Un registre absent ou non tenu à jour est un signal fort pour la commission. Il suggère une absence de gestion rigoureuse, et pousse à approfondir tous les autres points.</p>
+
+    <h2>5. Les contrôles électriques (Q18)</h2>
+    <p>L'attestation Q18 (rapport de vérification des installations électriques) est annuelle. Comme pour le désenfumage, c'est <strong>l'attestation</strong> qui fait foi — pas le contrat. Le rapport doit&nbsp;:</p>
+    <ul>
+      <li>Lister les anomalies relevées lors de la vérification.</li>
+      <li>Tracer leur traitement&nbsp;: anomalie levée, en cours, ou justifiée.</li>
+      <li>Être signé par un organisme agréé.</li>
+    </ul>
+    <p>Les anomalies non traitées d'une année sur l'autre attirent l'attention. La commission considère qu'une anomalie reportée d'année en année est, de fait, une non-conformité.</p>
+
+    <h2>6. La formation du personnel</h2>
+    <p>Souvent négligé. La commission peut interroger un membre du personnel sur les <strong>consignes d'évacuation</strong>, l'<strong>emplacement des extincteurs</strong>, ou le <strong>rôle attendu</strong> en cas d'alarme. Une réponse vague ou incertaine est notée au PV.</p>
+    <p>Pour les ERP recevant un public important, la formation incendie doit être périodique, documentée, et tracée dans le registre. Ce n'est pas une formalité — c'est l'un des rares points où la commission peut directement vérifier l'état réel, et non l'état documentaire.</p>
+
+    <h2>7. Les extincteurs</h2>
+    <p>Présents, accessibles, vérifiés annuellement, signalés correctement. Les quatre conditions doivent être remplies. Une étiquette de vérification dépassée d'un mois&nbsp;? Inscrite au PV. Un extincteur derrière une étagère&nbsp;? Inscrit. Un signal non lumineux dans un dégagement sombre&nbsp;? Inscrit.</p>
+    <p>L'erreur typique&nbsp;: penser que le prestataire de maintenance gère tout. <strong>Le gestionnaire de l'ERP reste responsable</strong>. Si le prestataire prend du retard, c'est l'ERP qui en supporte les conséquences.</p>
+
+    <h2>Le huitième point invisible</h2>
+    <p>Au-delà des sept axes formels, la commission perçoit autre chose, plus diffus mais déterminant&nbsp;: <strong>le sérieux de la gestion</strong>. Un dossier complet, un registre tenu, des prescriptions précédentes documentées, une personne capable de répondre aux questions techniques&nbsp;— tout cela créé une impression de maîtrise qui change l'angle de la visite.</p>
+    <p>À l'inverse, un dossier reconstitué le matin même, des documents introuvables, des regards perdus quand on cite les arrêtés, et la visite devient un examen plutôt qu'une vérification.</p>
+
+    <blockquote>La commission ne note pas. Mais elle décide. Et sa décision dépend autant de ce qu'elle voit que de ce qu'on lui montre.</blockquote>
+
+    <h2>Construire la préparation</h2>
+    <p>Préparer une commission, ce n'est pas tout vérifier la veille. C'est mettre en place, sur l'année, un cycle qui permet à chaque point de rester naturellement à jour. Les bons gestionnaires d'ERP ne préparent plus leurs commissions — ils <em>vivent</em> en conformité, et la commission ne fait que constater l'état permanent.</p>
+    <p>C'est exactement ce que SECUREXIA installe dans les collectivités et les établissements&nbsp;: un cycle de pré-visites, un suivi continu des prescriptions, un dossier maintenu en permanence prêt pour la commission.</p>
+
+    <div class="article-end-cta">
+      <h3>Sur vos ERP, où en êtes-vous des 7&nbsp;points&nbsp;?</h3>
+      <p>L'Audit Flash passe en revue chacun de ces axes sur site. Vous savez précisément où vous êtes exposé, et où vous êtes prêt. Gratuit, sans engagement.</p>
+      <button class="btn btn-primary btn-lg" onclick="showPage('audit')">Demander mon Audit Flash <span class="btn-arrow">→</span></button>
+    </div>
+  </article>
+
+  <div class="related-articles">
+    <div class="related-head">À lire ensuite</div>
+    <a class="ressource-card" onclick="showPage('article-avis')">
+      <div class="ressource-cat">Décryptage</div>
+      <h3>Avis défavorable de commission : que faire dans les 48 heures.</h3>
+      <p>Les bonnes décisions à prendre, le PV à décoder, les voies de recours et la feuille de route 30 jours.</p>
+      <div class="ressource-meta"><span>📖 8 min</span><span>·</span><span>Maires & DST</span></div>
+    </a>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     PAGE 404
+════════════════════════════════════════ -->
+<div id="page-404" class="page">
+  <section class="notfound">
+    <div class="notfound-inner">
+      <div class="notfound-code">404</div>
+      <h1 class="notfound-title">Cette page n'existe pas<br>(ou plus).</h1>
+      <p class="notfound-text">Le lien que vous suivez ne pointe nulle part. Pas grave&nbsp;: tout commence par l'Audit Flash de toute façon.</p>
+      <div class="notfound-actions">
+        <button class="btn btn-primary btn-lg" onclick="showPage('home')">Retour à l'accueil</button>
+        <button class="btn btn-outline-white btn-lg" onclick="showPage('audit')">Demander mon Audit Flash <span class="btn-arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════ -->
 <footer>
@@ -1101,6 +1453,7 @@
       <div class="footer-col">
         <h4>Entreprise</h4>
         <a onclick="showPage('apropos')">À propos</a>
+        <a onclick="showPage('ressources')">Ressources</a>
         <a onclick="showPage('cgv')">CGV</a>
         <a href="tel:+590690447360">06 90 44 73 60</a>
       </div>
