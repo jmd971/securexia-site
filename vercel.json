@@ -1,0 +1,41 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+      ]
+    },
+    {
+      "source": "/(.*\\.html)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://link.siboard-consulting.fr; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://link.siboard-consulting.fr;"
+        }
+      ]
+    },
+    {
+      "source": "/style.css",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/script.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
+  ]
+}
