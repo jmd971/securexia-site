@@ -54,6 +54,7 @@ securexia-site/
 | `page-ressources` | /ressources | Index articles / analyses |
 | `page-article-avis` | /ressources/avis-defavorable-commission | Article — Avis défavorable 48h |
 | `page-article-audit-7` | /ressources/audit-erp-7-points | Article — 7 points commission |
+| `page-article-categories` | /ressources/categories-erp | Article — Catégories ERP |
 | `page-apropos` | /a-propos | Équipe, vision, valeurs |
 | `page-cgv` | /cgv | Conditions générales de vente |
 | `page-mentions` | /mentions-legales | Mentions légales |
