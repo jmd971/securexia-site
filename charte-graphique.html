@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Securexia — Charte Graphique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+
+/* ═══════════════════════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════════════════════ */
+:root {
+  --navy-950:  #091522;
+  --navy-900:  #0D1F40;
+  --navy-800:  #1B2D5B;
+  --navy-700:  #243F75;
+  --navy-600:  #2E5294;
+  --navy-tint: rgba(27,45,91,0.06);
+
+  --gold-900:  #6B4A00;
+  --gold-800:  #A8831A;
+  --gold-700:  #C9A227;
+  --gold-600:  #D4B03A;
+  --gold-500:  #E0C467;
+  --gold-tint: rgba(201,162,39,0.08);
+
+  --neutral-950: #0F0F0D;
+  --neutral-800: #1E1E1A;
+  --neutral-600: #4A4A45;
+  --neutral-400: #8C8C85;
+  --neutral-200: #D4D3CC;
+  --neutral-100: #ECEAE3;
+  --neutral-50:  #F5F4EE;
+  --white:       #FFFFFF;
+
+  --success: #1A6B3A;
+  --warning: #B45309;
+  --error:   #991B1B;
+
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  --shadow-sm: 0 1px 3px rgba(9,21,34,0.08);
+  --shadow-md: 0 4px 16px rgba(9,21,34,0.1);
+  --shadow-lg: 0 12px 40px rgba(9,21,34,0.12);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--neutral-50);
+  color: var(--neutral-950);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NAVIGATION LATÉRALE
+═══════════════════════════════════════════════════════════ */
+.sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 220px;
+  height: 100vh;
+  background: var(--navy-950);
+  padding: 40px 0;
+  overflow-y: auto;
+  z-index: 100;
+}
+.sidebar-logo {
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 24px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 24px;
+}
+.sidebar-logo svg { flex-shrink: 0; }
+.sidebar-logo-text {
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--white); line-height: 1.3;
+}
+.sidebar-logo-text span { color: var(--gold-700); display: block; font-size: 8px; font-weight: 600; letter-spacing: 0.1em; margin-top: 2px; }
+.nav-section { margin-bottom: 8px; }
+.nav-label {
+  font-family: var(--font-display);
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  padding: 8px 24px 4px;
+  display: block;
+}
+.nav-item {
+  display: block;
+  padding: 7px 24px;
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: color 0.15s;
+  border-left: 2px solid transparent;
+}
+.nav-item:hover {
+  color: var(--white);
+  border-left-color: var(--gold-700);
+}
+.nav-version {
+  position: absolute; bottom: 24px; left: 0; right: 0;
+  text-align: center;
+  font-size: 10px; color: rgba(255,255,255,0.2);
+  letter-spacing: 0.06em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MAIN LAYOUT
+═══════════════════════════════════════════════════════════ */
+.main {
+  margin-left: 220px;
+  min-height: 100vh;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER
+═══════════════════════════════════════════════════════════ */
+.cover {
+  background: var(--navy-800);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: 80px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 600px; height: 600px;
+  background: radial-gradient(ellipse, rgba(201,162,39,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cover-eyebrow {
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold-700); margin-bottom: 20px;
+}
+.cover h1 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 800; line-height: 0.95;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+}
+.cover h1 em { color: var(--gold-700); font-style: normal; }
+.cover-meta {
+  display: flex; gap: 48px; align-items: flex-end;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 32px; margin-top: 0;
+}
+.cover-meta-item .label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); margin-bottom: 4px;
+}
+.cover-meta-item .value {
+  font-size: 14px; color: rgba(255,255,255,0.7);
+}
+.cover-mark {
+  position: absolute; right: 80px; bottom: 80px;
+  opacity: 0.06;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTIONS
+═══════════════════════════════════════════════════════════ */
+.section {
+  padding: 80px;
+  border-bottom: 1px solid var(--neutral-200);
+}
+.section:last-child { border-bottom: none; }
+.section-bg-white { background: var(--white); }
+.section-bg-navy { background: var(--navy-800); }
+.section-bg-dark { background: var(--navy-950); }
+
+.section-header { margin-bottom: 56px; }
+.section-index {
+  font-family: var(--font-display);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-700); display: block; margin-bottom: 12px;
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 800;
+  letter-spacing: -0.025em; line-height: 1.05;
+  color: var(--neutral-950);
+}
+.section-bg-navy .section h2,
+.section-bg-dark .section h2 { color: var(--white); }
+.section-bg-navy .section-index,
+.section-bg-dark .section-index { color: var(--gold-600); }
+
+.section-lead {
+  font-size: 17px; line-height: 1.7;
+  color: var(--neutral-600);
+  max-width: 600px; margin-top: 16px;
+}
+.section-bg-navy .section-lead,
+.section-bg-dark .section-lead { color: rgba(255,255,255,0.55); }
+
+/* ═══════════════════════════════════════════════════════════
+   GRILLES UTILITAIRES
+═══════════════════════════════════════════════════════════ */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+
+/* ═══════════════════════════════════════════════════════════
+   COULEURS
+═══════════════════════════════════════════════════════════ */
+.color-swatch {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.swatch-block {
+  height: 120px;
+  position: relative;
+}
+.swatch-primary-mark {
+  position: absolute; top: 12px; right: 12px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+}
+.swatch-info {
+  background: var(--white);
+  padding: 14px 16px;
+}
+.swatch-name {
+  font-family: var(--font-display);
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--neutral-950); margin-bottom: 3px;
+}
+.swatch-hex {
+  font-size: 11px; font-family: 'Courier New', monospace;
+  color: var(--neutral-400); letter-spacing: 0.04em;
+}
+.swatch-usage {
+  font-size: 10.5px; color: var(--neutral-600); margin-top: 4px;
+  line-height: 1.4;
+}
+
+.color-row {
+  display: flex; gap: 2px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 32px;
+}
+.color-row-block {
+  flex: 1; height: 48px;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: 6px;
+  font-size: 9px; letter-spacing: 0.04em;
+  font-family: 'Courier New', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TYPOGRAPHIE
+═══════════════════════════════════════════════════════════ */
+.type-specimen {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 20px;
+}
+.type-meta {
+  display: flex; gap: 24px; align-items: center;
+  margin-bottom: 20px; padding-bottom: 20px;
+  border-bottom: 1px solid var(--neutral-100);
+}
+.type-meta-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--neutral-400);
+}
+.type-meta-value {
+  font-size: 12px; color: var(--neutral-600);
+  font-family: 'Courier New', monospace;
+}
+.type-sample { margin-bottom: 12px; }
+.type-sample:last-child { margin-bottom: 0; }
+
+.type-scale {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.type-scale-row {
+  display: flex; align-items: baseline;
+  padding: 18px 40px;
+  border-bottom: 1px solid var(--neutral-100);
+  gap: 40px;
+}
+.type-scale-row:last-child { border-bottom: none; }
+.type-scale-label {
+  font-size: 10px; color: var(--neutral-400);
+  font-family: 'Courier New', monospace;
+  min-width: 80px;
+  letter-spacing: 0.04em;
+}
+.type-scale-sample { color: var(--neutral-950); line-height: 1.3; }
+.type-scale-spec {
+  margin-left: auto;
+  font-size: 10px; color: var(--neutral-400);
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LOGO
+═══════════════════════════════════════════════════════════ */
+.logo-showcase {
+  display: flex; align-items: center; gap: 28px;
+}
+.logo-showcase svg { flex-shrink: 0; }
+.logo-showcase-text .brand {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--navy-800); line-height: 1;
+}
+.logo-showcase-text .tag {
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold-700); margin-top: 6px;
+}
+
+.logo-bg-card {
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  display: flex; flex-direction: column;
+  gap: 32px;
+}
+.logo-bg-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--neutral-400); margin-top: 16px;
+}
+
+.logo-rule {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  box-shadow: var(--shadow-sm);
+}
+.logo-rule-title {
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--neutral-950); margin-bottom: 12px;
+}
+.logo-rule p { font-size: 13.5px; color: var(--neutral-600); line-height: 1.65; }
+
+.do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.do-block, .dont-block {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.do-block .header { background: #ECFDF5; padding: 12px 20px; }
+.dont-block .header { background: #FEF2F2; padding: 12px 20px; }
+.do-block .header span { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #065F46; text-transform: uppercase; }
+.dont-block .header span { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #991B1B; text-transform: uppercase; }
+.do-block .body, .dont-block .body {
+  background: var(--white); padding: 24px 20px;
+  border: 1px solid var(--neutral-100); border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+.do-block .body p, .dont-block .body p { font-size: 13px; color: var(--neutral-600); line-height: 1.55; }
+
+/* ═══════════════════════════════════════════════════════════
+   ESPACEMENT
+═══════════════════════════════════════════════════════════ */
+.spacing-row {
+  display: flex; align-items: flex-end; gap: 16px;
+  background: var(--white);
+  border-radius: var(--radius-xl); padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+.spacing-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.spacing-block { background: var(--navy-700); border-radius: 3px; width: 100%; }
+.spacing-label {
+  font-size: 10px; font-family: 'Courier New', monospace;
+  color: var(--neutral-400); text-align: center; letter-spacing: 0.04em;
+}
+.spacing-value {
+  font-size: 11px; font-weight: 600; color: var(--neutral-950); text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COMPOSANTS — BOUTONS
+═══════════════════════════════════════════════════════════ */
+.component-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 20px;
+}
+.component-preview {
+  padding: 48px 40px;
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+  border-bottom: 1px solid var(--neutral-100);
+}
+.component-preview.dark { background: var(--navy-950); }
+.component-spec {
+  padding: 24px 40px;
+  display: flex; gap: 40px;
+}
+.spec-item .spec-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--neutral-400); margin-bottom: 4px;
+}
+.spec-item .spec-value {
+  font-size: 12px; font-family: 'Courier New', monospace; color: var(--neutral-600);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600; letter-spacing: 0.02em;
+  border: none; cursor: pointer;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+.btn-sm  { font-size: 13px; padding: 8px 16px; border-radius: var(--radius-md); }
+.btn-md  { font-size: 14px; padding: 11px 22px; border-radius: var(--radius-md); }
+.btn-lg  { font-size: 15px; padding: 14px 28px; border-radius: var(--radius-lg); }
+
+.btn-primary {
+  background: var(--navy-800); color: var(--white);
+  box-shadow: 0 1px 3px rgba(9,21,34,0.2);
+}
+.btn-primary:hover { background: var(--navy-900); }
+
+.btn-gold {
+  background: var(--gold-700); color: var(--navy-950);
+  box-shadow: 0 1px 3px rgba(201,162,39,0.3);
+}
+.btn-gold:hover { background: var(--gold-600); }
+
+.btn-outline {
+  background: transparent; color: var(--navy-800);
+  border: 1.5px solid var(--navy-800);
+  box-shadow: none;
+}
+.btn-outline:hover { background: var(--navy-tint); }
+
+.btn-ghost {
+  background: transparent; color: var(--navy-800);
+  box-shadow: none;
+}
+.btn-ghost:hover { background: var(--neutral-100); }
+
+.btn-outline-white {
+  background: transparent; color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.35);
+}
+.btn-outline-white:hover { border-color: rgba(255,255,255,0.7); }
+
+.btn:disabled, .btn.disabled {
+  opacity: 0.38; cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COMPOSANTS — BADGES
+═══════════════════════════════════════════════════════════ */
+.badge-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-body);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 100px;
+  white-space: nowrap;
+}
+.badge-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+
+.badge-navy    { background: var(--navy-tint); color: var(--navy-800); }
+.badge-navy .badge-dot { background: var(--navy-800); }
+.badge-gold    { background: var(--gold-tint); color: var(--gold-900); }
+.badge-gold .badge-dot { background: var(--gold-700); }
+.badge-success { background: rgba(26,107,58,0.08); color: var(--success); }
+.badge-success .badge-dot { background: var(--success); }
+.badge-warning { background: rgba(180,83,9,0.08); color: var(--warning); }
+.badge-warning .badge-dot { background: var(--warning); }
+.badge-error   { background: rgba(153,27,27,0.08); color: var(--error); }
+.badge-error .badge-dot { background: var(--error); }
+.badge-neutral { background: var(--neutral-100); color: var(--neutral-600); }
+.badge-neutral .badge-dot { background: var(--neutral-400); }
+
+/* ═══════════════════════════════════════════════════════════
+   COMPOSANTS — CARTES
+═══════════════════════════════════════════════════════════ */
+.card-demo {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.card-demo-top {
+  background: var(--navy-800);
+  padding: 32px;
+  display: flex; align-items: center; gap: 16px;
+}
+.card-demo-icon {
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.card-demo-title {
+  font-family: var(--font-display);
+  font-size: 16px; font-weight: 700; color: var(--white); line-height: 1.2;
+}
+.card-demo-subtitle { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 3px; }
+.card-demo-body { padding: 28px 32px; }
+.card-demo-body p { font-size: 14px; color: var(--neutral-600); line-height: 1.65; }
+.card-demo-footer {
+  padding: 0 32px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.card-demo-meta { font-size: 11px; color: var(--neutral-400); letter-spacing: 0.04em; }
+
+.card-stat {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  border-top: 3px solid var(--gold-700);
+}
+.card-stat-num {
+  font-family: var(--font-display);
+  font-size: 40px; font-weight: 800;
+  letter-spacing: -0.03em; color: var(--navy-800); line-height: 1;
+  margin-bottom: 6px;
+}
+.card-stat-num sup { font-size: 20px; color: var(--gold-700); }
+.card-stat-label { font-size: 13px; color: var(--neutral-600); }
+
+/* ═══════════════════════════════════════════════════════════
+   COMPOSANTS — FORMULAIRES
+═══════════════════════════════════════════════════════════ */
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-label {
+  font-size: 12.5px; font-weight: 600;
+  color: var(--neutral-800); letter-spacing: 0.01em;
+}
+.form-input {
+  font-family: var(--font-body);
+  font-size: 14px; color: var(--neutral-950);
+  background: var(--white);
+  border: 1.5px solid var(--neutral-200);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+.form-input:focus { border-color: var(--navy-800); }
+.form-input.error { border-color: var(--error); }
+.form-input::placeholder { color: var(--neutral-400); }
+.form-hint { font-size: 11.5px; color: var(--neutral-400); }
+.form-error { font-size: 11.5px; color: var(--error); }
+
+/* ═══════════════════════════════════════════════════════════
+   COMPOSANTS — ICONES / PICTOS
+═══════════════════════════════════════════════════════════ */
+.icon-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.icon-item {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  width: 90px;
+  box-shadow: var(--shadow-sm);
+}
+.icon-item span { font-size: 10px; color: var(--neutral-400); text-align: center; line-height: 1.3; }
+
+/* ═══════════════════════════════════════════════════════════
+   TON EDITORIAL
+═══════════════════════════════════════════════════════════ */
+.voice-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+.voice-card h3 {
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--neutral-950); margin-bottom: 16px;
+}
+.voice-examples { display: flex; flex-direction: column; gap: 12px; }
+.voice-ex {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 14px 16px; border-radius: var(--radius-md);
+}
+.voice-ex.good { background: #ECFDF5; }
+.voice-ex.bad  { background: #FEF2F2; }
+.voice-ex-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+.voice-ex p { font-size: 13.5px; line-height: 1.5; }
+.voice-ex.good p { color: #065F46; }
+.voice-ex.bad  p { color: #991B1B; }
+
+/* ═══════════════════════════════════════════════════════════
+   PRINCIPES / VALEURS
+═══════════════════════════════════════════════════════════ */
+.principle {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+  border-left: 3px solid var(--gold-700);
+}
+.principle-num {
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; color: var(--gold-700); margin-bottom: 10px;
+}
+.principle h3 {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 700;
+  letter-spacing: -0.01em; color: var(--neutral-950); margin-bottom: 10px;
+}
+.principle p { font-size: 13.5px; color: var(--neutral-600); line-height: 1.65; }
+
+/* ═══════════════════════════════════════════════════════════
+   TABLE
+═══════════════════════════════════════════════════════════ */
+.spec-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--white); border-radius: var(--radius-xl);
+  overflow: hidden; box-shadow: var(--shadow-sm);
+}
+.spec-table thead tr { background: var(--neutral-50); }
+.spec-table th {
+  text-align: left; padding: 14px 20px;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--neutral-400);
+  border-bottom: 1px solid var(--neutral-100);
+}
+.spec-table td {
+  padding: 14px 20px;
+  font-size: 13px; color: var(--neutral-700);
+  border-bottom: 1px solid var(--neutral-100);
+  vertical-align: middle;
+}
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table td code {
+  font-family: 'Courier New', monospace;
+  font-size: 12px; color: var(--navy-800);
+  background: var(--neutral-50); padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   APPLICATION — EXEMPLES
+═══════════════════════════════════════════════════════════ */
+.mock-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--neutral-100);
+  padding: 0 40px;
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+.mock-header-logo { display: flex; align-items: center; gap: 10px; }
+.mock-header-logo .brand-text {
+  font-family: var(--font-display);
+  font-size: 13px; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--navy-800);
+}
+.mock-nav { display: flex; gap: 24px; }
+.mock-nav a { font-size: 12px; color: var(--neutral-600); text-decoration: none; }
+
+.mock-hero {
+  background: var(--navy-800);
+  padding: 60px 48px;
+  position: relative; overflow: hidden;
+}
+.mock-hero::after {
+  content: '';
+  position: absolute; right: 48px; top: 50%; transform: translateY(-50%);
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 2px solid rgba(201,162,39,0.3);
+  box-shadow: 0 0 0 24px rgba(201,162,39,0.06);
+}
+.mock-hero-eyebrow {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold-600); margin-bottom: 12px;
+}
+.mock-hero h2 {
+  font-family: var(--font-display);
+  font-size: 32px; font-weight: 800;
+  letter-spacing: -0.02em; color: var(--white); line-height: 1.1;
+  margin-bottom: 16px; max-width: 360px;
+}
+.mock-hero p { font-size: 14px; color: rgba(255,255,255,0.6); max-width: 320px; line-height: 1.6; margin-bottom: 28px; }
+.mock-hero-buttons { display: flex; gap: 12px; }
+
+.mock-footer {
+  background: var(--navy-950);
+  padding: 40px 48px;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.mock-footer-brand {
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; color: rgba(255,255,255,0.3);
+}
+.mock-footer-links { display: flex; gap: 20px; }
+.mock-footer-links a { font-size: 11px; color: rgba(255,255,255,0.3); text-decoration: none; }
+
+/* ═══════════════════════════════════════════════════════════
+   UTILITAIRES
+═══════════════════════════════════════════════════════════ */
+.mt-8  { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+.mt-48 { margin-top: 48px; }
+.mb-8  { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+.gap-16 { gap: 16px; }
+.rule { border: none; border-top: 1px solid var(--neutral-100); margin: 48px 0; }
+.mono { font-family: 'Courier New', monospace; font-size: 12px; color: var(--neutral-400); }
+
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .main { margin-left: 0; }
+  .cover, .section { padding: 48px 32px; }
+  .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SIDEBAR
+═══════════════════════════════════════════════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <svg viewBox="0 0 100 100" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="44" fill="none" stroke="#FFFFFF" stroke-width="7"/>
+      <circle cx="50" cy="50" r="35" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+      <path d="M 24 50 L 42 70 L 76 30" fill="none" stroke="#C9A227" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="sidebar-logo-text">
+      Securexia
+      <span>Charte Graphique</span>
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <span class="nav-label">Fondations</span>
+    <a href="#brand" class="nav-item">Valeurs de marque</a>
+    <a href="#couleurs" class="nav-item">Couleurs</a>
+    <a href="#typographie" class="nav-item">Typographie</a>
+    <a href="#espacement" class="nav-item">Espacement</a>
+  </div>
+  <div class="nav-section">
+    <span class="nav-label">Identité</span>
+    <a href="#logo" class="nav-item">Logo</a>
+    <a href="#voix" class="nav-item">Voix & ton</a>
+  </div>
+  <div class="nav-section">
+    <span class="nav-label">Composants</span>
+    <a href="#boutons" class="nav-item">Boutons</a>
+    <a href="#badges" class="nav-item">Badges</a>
+    <a href="#cartes" class="nav-item">Cartes</a>
+    <a href="#formulaires" class="nav-item">Formulaires</a>
+    <a href="#icones" class="nav-item">Iconographie</a>
+  </div>
+  <div class="nav-section">
+    <span class="nav-label">Application</span>
+    <a href="#application" class="nav-item">Exemples UI</a>
+    <a href="#interdits" class="nav-item">À ne pas faire</a>
+  </div>
+
+  <div class="nav-version">Version 1.0 · Juin 2025</div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════════════════════ -->
+<main class="main">
+
+<!-- ── COVER ── -->
+<div class="cover">
+  <div class="cover-eyebrow">Charte Graphique · Version 1.0</div>
+  <h1>Securexia<br><em>Design</em><br>System</h1>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="label">Marque</div>
+      <div class="value">Securexia</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="label">Usage</div>
+      <div class="value">Supports digitaux & print</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="label">Émis le</div>
+      <div class="value">Juin 2025</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="label">Version</div>
+      <div class="value">1.0</div>
+    </div>
+  </div>
+  <div class="cover-mark">
+    <svg viewBox="0 0 200 200" width="320" height="320" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="90" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+      <circle cx="100" cy="100" r="72" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+      <path d="M 44 100 L 82 140 L 156 60" fill="none" stroke="#C9A227" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     01 · VALEURS DE MARQUE
+══════════════════════════════════════════════════════════ -->
+<section class="section section-bg-white" id="brand">
+  <div class="section-header">
+    <span class="section-index">01 · Fondations</span>
+    <h2>Valeurs de marque</h2>
+    <p class="section-lead">Avant toute règle visuelle, il y a un positionnement. Chaque décision graphique découle de ces quatre principes.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="principle">
+      <div class="principle-num">01</div>
+      <h3>Institutionnel, pas corporate</h3>
+      <p>Securexia travaille avec des élus, des directeurs de collectivités, des gérants d'ERP. Ces interlocuteurs font confiance à des partenaires qui ressemblent à des institutions — pas à des start-ups. L'esthétique doit projeter la rigueur d'un cabinet, pas la légèreté d'une appli.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">02</div>
+      <h3>La clarté avant la séduction</h3>
+      <p>La conformité ERP est un sujet anxiogène. Le rôle du design est de rassurer et de simplifier, pas d'impressionner. Hiérarchie lisible, contrastes suffisants, formulations directes. Un directeur qui lit vite doit comprendre en 10 secondes.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">03</div>
+      <h3>Premium sans ostentation</h3>
+      <p>Le bleu marine et l'or ne sont pas là pour paraître luxueux. Ils signalent la confiance, la durée, la responsabilité. L'or n'est jamais décoratif — il marque exclusivement les éléments d'action ou de validation. Tout le reste est marine ou neutre.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">04</div>
+      <h3>La coche comme signature</h3>
+      <p>Le logo contient une coche. Ce n'est pas un hasard — c'est le cœur du service. Chaque élément visuel doit renforcer cette idée : Securexia, c'est la garantie que l'ERP peut ouvrir et rester ouvert. Le vert de validation, la coche, le double anneau sont des symboles récurrents.</p>
+    </div>
+  </div>
+
+  <hr class="rule">
+  <p style="font-size:13px; color:var(--neutral-400); font-style:italic; max-width:560px;">
+    "Ouvrir. Rester ouvert." n'est pas un slogan marketing. C'est une promesse contractuelle. Chaque directeur d'ERP qui signe avec Securexia achète la certitude que sa commission de sécurité ne se terminera pas par une fermeture administrative.
+  </p>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     02 · COULEURS
+══════════════════════════════════════════════════════════ -->
+<section class="section" id="couleurs">
+  <div class="section-header">
+    <span class="section-index">02 · Couleurs</span>
+    <h2>Système de couleurs</h2>
+    <p class="section-lead">Deux familles principales. Le marine structure, l'or valide. Tout le reste est neutre.</p>
+  </div>
+
+  <!-- Couleurs primaires -->
+  <p class="mb-16" style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--neutral-400);">Couleurs primaires</p>
+  <div class="grid-5">
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#091522;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Navy 950</div>
+        <div class="swatch-hex">#091522</div>
+        <div class="swatch-usage">Footer, fonds sombres</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#0D1F40;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Navy 900</div>
+        <div class="swatch-hex">#0D1F40</div>
+        <div class="swatch-usage">Arrière-plans sombres</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#1B2D5B; border:2px solid #C9A227; border-radius:8px 8px 0 0; box-sizing:border-box;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Navy 800 ★</div>
+        <div class="swatch-hex">#1B2D5B</div>
+        <div class="swatch-usage">Couleur primaire. Logo, hero, titres</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#243F75;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Navy 700</div>
+        <div class="swatch-hex">#243F75</div>
+        <div class="swatch-usage">Hover states, variations</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#2E5294;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Navy 600</div>
+        <div class="swatch-hex">#2E5294</div>
+        <div class="swatch-usage">Liens, accentuations légères</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-5 mt-16">
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#6B4A00;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Or 900</div>
+        <div class="swatch-hex">#6B4A00</div>
+        <div class="swatch-usage">Or profond, textes sur fond clair</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#A8831A;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Or 800</div>
+        <div class="swatch-hex">#A8831A</div>
+        <div class="swatch-usage">Or foncé, états pressed</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#C9A227; border:2px solid #1B2D5B; border-radius:8px 8px 0 0; box-sizing:border-box;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Or 700 ★</div>
+        <div class="swatch-hex">#C9A227</div>
+        <div class="swatch-usage">Accent principal. CTA, coche, highlights</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#D4B03A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Or 600</div>
+        <div class="swatch-hex">#D4B03A</div>
+        <div class="swatch-usage">Hover sur bouton or</div>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#E0C467;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Or 500</div>
+        <div class="swatch-hex">#E0C467</div>
+        <div class="swatch-usage">Or pâle, teinte décorative</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Couleurs neutres -->
+  <p class="mt-48 mb-16" style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--neutral-400);">Neutres & sémantiques</p>
+  <div class="grid-4">
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#0F0F0D;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info"><div class="swatch-name">Texte principal</div><div class="swatch-hex">#0F0F0D</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#4A4A45;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info"><div class="swatch-name">Texte secondaire</div><div class="swatch-hex">#4A4A45</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#8C8C85;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info"><div class="swatch-name">Texte discret</div><div class="swatch-hex">#8C8C85</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#F5F4EE; border:1px solid #E2E1DA;"></div>
+      <div class="swatch-info"><div class="swatch-name">Fond neutre</div><div class="swatch-hex">#F5F4EE</div></div>
+    </div>
+  </div>
+
+  <div class="grid-3 mt-16">
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#1A6B3A;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info"><div class="swatch-name">Succès / Conforme</div><div class="swatch-hex">#1A6B3A</div><div class="swatch-usage">Avis favorable, statut OK</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#B45309;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info"><div class="swatch-name">Avertissement</div><div class="swatch-hex">#B45309</div><div class="swatch-usage">Prescriptions en attente</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background:#991B1B;"><div class="swatch-primary-mark"></div></div>
+      <div class="swatch-info"><div class="swatch-name">Critique / Urgent</div><div class="swatch-hex">#991B1B</div><div class="swatch-usage">Non-conformité, avis défavorable</div></div>
+    </div>
+  </div>
+
+  <!-- Règle d'usage -->
+  <hr class="rule">
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Couleur</th>
+        <th>Quand l'utiliser</th>
+        <th>À ne jamais faire</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span style="display:inline-block;width:12px;height:12px;background:#1B2D5B;border-radius:3px;margin-right:8px;vertical-align:middle;"></span><code>#1B2D5B</code> Navy</td>
+        <td>En-têtes, CTA primaire, blocs hero, textes forts</td>
+        <td>Sur fond trop sombre (contraste insuffisant)</td>
+      </tr>
+      <tr>
+        <td><span style="display:inline-block;width:12px;height:12px;background:#C9A227;border-radius:3px;margin-right:8px;vertical-align:middle;"></span><code>#C9A227</code> Or</td>
+        <td>CTA secondaire, coche, highlight, tagline, liens actifs</td>
+        <td>Comme couleur de fond large, sur du blanc en texte corps</td>
+      </tr>
+      <tr>
+        <td><span style="display:inline-block;width:12px;height:12px;background:#F5F4EE;border:1px solid #D4D3CC;border-radius:3px;margin-right:8px;vertical-align:middle;"></span><code>#F5F4EE</code> Fond</td>
+        <td>Fond de page, zones de contenu secondaires</td>
+        <td>Comme couleur de texte</td>
+      </tr>
+      <tr>
+        <td><span style="display:inline-block;width:12px;height:12px;background:#1A6B3A;border-radius:3px;margin-right:8px;vertical-align:middle;"></span><code>#1A6B3A</code> Vert</td>
+        <td>Uniquement pour statut "conforme" ou avis favorable</td>
+        <td>Comme couleur décorative ou de marque</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     03 · TYPOGRAPHIE
+══════════════════════════════════════════════════════════ -->
+<section class="section section-bg-white" id="typographie">
+  <div class="section-header">
+    <span class="section-index">03 · Typographie</span>
+    <h2>Système typographique</h2>
+    <p class="section-lead">Syne pour les titres et la marque. DM Sans pour tout le reste. Deux polices, un seul caractère.</p>
+  </div>
+
+  <!-- Specimen Syne -->
+  <div class="type-specimen">
+    <div class="type-meta">
+      <div>
+        <div class="type-meta-label">Famille</div>
+        <div class="type-meta-value">Syne</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Usage</div>
+        <div class="type-meta-value">Titres, en-têtes, logo, eyebrows</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Graisses</div>
+        <div class="type-meta-value">500 · 600 · 700 · 800</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Source</div>
+        <div class="type-meta-value">Google Fonts (gratuit)</div>
+      </div>
+    </div>
+    <div class="type-sample">
+      <div style="font-family:var(--font-display);font-size:52px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:var(--neutral-950);">Conformité ERP</div>
+    </div>
+    <div class="type-sample mt-16">
+      <div style="font-family:var(--font-display);font-size:28px;font-weight:700;letter-spacing:-0.01em;color:var(--navy-800);">Ouvrir. Rester ouvert.</div>
+    </div>
+    <div class="type-sample mt-12">
+      <div style="font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-700);">Audit Flash gratuit · Guadeloupe</div>
+    </div>
+    <div class="type-sample mt-12">
+      <div style="font-family:var(--font-display);font-size:13px;font-weight:500;letter-spacing:0.04em;color:var(--neutral-400);">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+    </div>
+  </div>
+
+  <!-- Specimen DM Sans -->
+  <div class="type-specimen mt-20">
+    <div class="type-meta">
+      <div>
+        <div class="type-meta-label">Famille</div>
+        <div class="type-meta-value">DM Sans</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Usage</div>
+        <div class="type-meta-value">Corps, UI, labels, boutons</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Graisses</div>
+        <div class="type-meta-value">300 · 400 · 500 · 600</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Optical size</div>
+        <div class="type-meta-value">9–40 (variable)</div>
+      </div>
+    </div>
+    <div class="type-sample">
+      <div style="font-family:var(--font-body);font-size:17px;line-height:1.7;color:var(--neutral-700);max-width:600px;">
+        Securexia prend en charge l'ensemble du cycle de conformité ERP : de l'audit flash initial à l'accompagnement lors de la commission officielle, en passant par la préparation complète du dossier préfectoral.
+      </div>
+    </div>
+    <div class="type-sample mt-16" style="display:flex;gap:32px;">
+      <div style="font-family:var(--font-body);font-size:15px;font-weight:300;color:var(--neutral-500);">Light 300</div>
+      <div style="font-family:var(--font-body);font-size:15px;font-weight:400;color:var(--neutral-700);">Regular 400</div>
+      <div style="font-family:var(--font-body);font-size:15px;font-weight:500;color:var(--neutral-800);">Medium 500</div>
+      <div style="font-family:var(--font-body);font-size:15px;font-weight:600;color:var(--neutral-950);">SemiBold 600</div>
+    </div>
+  </div>
+
+  <!-- Échelle typographique -->
+  <p class="mt-48 mb-16" style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--neutral-400);">Échelle typographique</p>
+  <div class="type-scale">
+    <div class="type-scale-row">
+      <span class="type-scale-label">display-xl</span>
+      <span class="type-scale-sample" style="font-family:var(--font-display);font-size:72px;font-weight:800;letter-spacing:-0.04em;line-height:1;">Titre hero</span>
+      <span class="type-scale-spec">Syne 800 · 72px · -0.04em</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">display-lg</span>
+      <span class="type-scale-sample" style="font-family:var(--font-display);font-size:48px;font-weight:800;letter-spacing:-0.03em;line-height:1.05;">Titre de section</span>
+      <span class="type-scale-spec">Syne 800 · 48px · -0.03em</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">display-md</span>
+      <span class="type-scale-sample" style="font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing:-0.025em;">Sous-section</span>
+      <span class="type-scale-spec">Syne 700 · 36px · -0.025em</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">heading-lg</span>
+      <span class="type-scale-sample" style="font-family:var(--font-display);font-size:24px;font-weight:700;letter-spacing:-0.01em;">Titre de carte ou module</span>
+      <span class="type-scale-spec">Syne 700 · 24px · -0.01em</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">heading-md</span>
+      <span class="type-scale-sample" style="font-family:var(--font-display);font-size:18px;font-weight:700;">Titre de composant</span>
+      <span class="type-scale-spec">Syne 700 · 18px</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">body-lg</span>
+      <span class="type-scale-sample" style="font-size:17px;line-height:1.7;">Texte lead, introduction de section</span>
+      <span class="type-scale-spec">DM Sans 400 · 17px · 1.7lh</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">body-md</span>
+      <span class="type-scale-sample" style="font-size:15px;line-height:1.65;">Corps de texte standard</span>
+      <span class="type-scale-spec">DM Sans 400 · 15px · 1.65lh</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">body-sm</span>
+      <span class="type-scale-sample" style="font-size:13px;line-height:1.6;">Texte secondaire, légendes</span>
+      <span class="type-scale-spec">DM Sans 400 · 13px · 1.6lh</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-label">label</span>
+      <span class="type-scale-sample" style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-700);">Eyebrow · Catégorie · Tag</span>
+      <span class="type-scale-spec">DM Sans 700 · 11px · 0.14em · UC</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     04 · ESPACEMENT
+══════════════════════════════════════════════════════════ -->
+<section class="section" id="espacement">
+  <div class="section-header">
+    <span class="section-index">04 · Espacement</span>
+    <h2>Grille & espacement</h2>
+    <p class="section-lead">Base 4px. Tout multiple de 4. Espace blanc généreux — il n'y a pas de honte à respirer.</p>
+  </div>
+
+  <div class="spacing-row">
+    <div class="spacing-item" style="flex:0 0 4px">
+      <div class="spacing-block" style="height:4px;width:4px;"></div>
+      <div class="spacing-label">s-1</div>
+      <div class="spacing-value">4px</div>
+    </div>
+    <div class="spacing-item" style="flex:0 0 8px">
+      <div class="spacing-block" style="height:8px;width:8px;"></div>
+      <div class="spacing-label">s-2</div>
+      <div class="spacing-value">8px</div>
+    </div>
+    <div class="spacing-item" style="flex:0 0 16px">
+      <div class="spacing-block" style="height:16px;width:16px;"></div>
+      <div class="spacing-label">s-4</div>
+      <div class="spacing-value">16px</div>
+    </div>
+    <div class="spacing-item" style="flex:0 0 24px">
+      <div class="spacing-block" style="height:24px;width:24px;"></div>
+      <div class="spacing-label">s-6</div>
+      <div class="spacing-value">24px</div>
+    </div>
+    <div class="spacing-item" style="flex:0 0 32px">
+      <div class="spacing-block" style="height:32px;width:32px;"></div>
+      <div class="spacing-label">s-8</div>
+      <div class="spacing-value">32px</div>
+    </div>
+    <div class="spacing-item" style="flex:0 0 48px">
+      <div class="spacing-block" style="height:48px;width:48px;"></div>
+      <div class="spacing-label">s-12</div>
+      <div class="spacing-value">48px</div>
+    </div>
+    <div class="spacing-item" style="flex:0 0 64px">
+      <div class="spacing-block" style="height:64px;width:64px;"></div>
+      <div class="spacing-label">s-16</div>
+      <div class="spacing-value">64px</div>
+    </div>
+    <div class="spacing-item" style="flex:0 0 80px">
+      <div class="spacing-block" style="height:80px;width:80px;"></div>
+      <div class="spacing-label">s-20</div>
+      <div class="spacing-value">80px</div>
+    </div>
+    <div class="spacing-item" style="flex:1">
+      <div class="spacing-block" style="height:128px;width:100%;"></div>
+      <div class="spacing-label">s-32</div>
+      <div class="spacing-value">128px</div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <table class="spec-table">
+    <thead>
+      <tr><th>Contexte</th><th>Espacement recommandé</th><th>Token</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Padding interne d'un bouton (md)</td><td>11px vertical · 22px horizontal</td><td><code>s-3 / s-6</code></td></tr>
+      <tr><td>Gap entre éléments dans une carte</td><td>16–24px</td><td><code>s-4 / s-6</code></td></tr>
+      <tr><td>Padding interne d'une carte</td><td>28–40px</td><td><code>s-7 / s-10</code></td></tr>
+      <tr><td>Gap entre cartes dans une grille</td><td>20–24px</td><td><code>s-5 / s-6</code></td></tr>
+      <tr><td>Padding de section (desktop)</td><td>80px vertical · 80px horizontal</td><td><code>s-20</code></td></tr>
+      <tr><td>Margin entre titre et contenu</td><td>48–56px</td><td><code>s-12 / s-14</code></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     05 · LOGO
+══════════════════════════════════════════════════════════ -->
+<section class="section section-bg-white" id="logo">
+  <div class="section-header">
+    <span class="section-index">05 · Identité</span>
+    <h2>Logo & usage</h2>
+    <p class="section-lead">Le double anneau + coche est immuable. Sa construction, ses proportions et ses couleurs ne se modifient pas.</p>
+  </div>
+
+  <!-- Anatomie -->
+  <div style="background:var(--neutral-50);border-radius:var(--radius-xl);padding:56px;display:flex;align-items:center;justify-content:center;gap:64px;">
+    <svg viewBox="0 0 100 100" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer ring with annotation -->
+      <circle cx="50" cy="50" r="44" fill="none" stroke="#1B2D5B" stroke-width="5"/>
+      <!-- Inner ring -->
+      <circle cx="50" cy="50" r="35" fill="none" stroke="#1B2D5B" stroke-width="1.5" opacity="0.3"/>
+      <!-- Checkmark -->
+      <path d="M 24 50 L 42 70 L 76 30" fill="none" stroke="#C9A227" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Annotations -->
+      <line x1="94" y1="50" x2="110" y2="30" stroke="#8C8C85" stroke-width="0.8" stroke-dasharray="2,2"/>
+      <line x1="85" y1="14" x2="110" y2="10" stroke="#8C8C85" stroke-width="0.8" stroke-dasharray="2,2"/>
+      <line x1="42" y1="70" x2="20" y2="88" stroke="#C9A227" stroke-width="0.8" stroke-dasharray="2,2"/>
+    </svg>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:12px;height:3px;background:#1B2D5B;border-radius:2px;"></div>
+        <span style="font-size:12px;color:var(--neutral-600);">Anneau extérieur — Navy 800, stroke 5px</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:12px;height:1px;background:#1B2D5B;border-radius:2px;opacity:0.35;"></div>
+        <span style="font-size:12px;color:var(--neutral-600);">Anneau intérieur — Navy 800, opacity 30%</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:12px;height:3px;background:#C9A227;border-radius:2px;"></div>
+        <span style="font-size:12px;color:var(--neutral-600);">Coche — Or 700, stroke 9px, linecap round</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:12px;height:12px;background:transparent;border:1px dashed #8C8C85;border-radius:2px;"></div>
+        <span style="font-size:12px;color:var(--neutral-600);">Zone de protection : 1× le rayon extérieur</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Versions fond -->
+  <p class="mt-48 mb-16" style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--neutral-400);">Déclinaisons autorisées</p>
+  <div class="grid-3">
+    <div class="logo-bg-card" style="background:var(--white);border:1px solid var(--neutral-100);">
+      <div class="logo-showcase">
+        <svg viewBox="0 0 100 100" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="44" fill="none" stroke="#1B2D5B" stroke-width="7"/>
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#1B2D5B" stroke-width="2" opacity="0.3"/>
+          <path d="M 24 50 L 42 70 L 76 30" fill="none" stroke="#C9A227" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="logo-showcase-text">
+          <div class="brand">Securexia</div>
+          <div class="tag">Ouvrir. Rester ouvert.</div>
+        </div>
+      </div>
+      <div class="logo-bg-label">Fond blanc / neutre</div>
+    </div>
+    <div class="logo-bg-card" style="background:var(--navy-800);">
+      <div class="logo-showcase">
+        <svg viewBox="0 0 100 100" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="44" fill="none" stroke="#FFFFFF" stroke-width="7"/>
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+          <path d="M 24 50 L 42 70 L 76 30" fill="none" stroke="#C9A227" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="logo-showcase-text">
+          <div class="brand" style="color:var(--white);">Securexia</div>
+          <div class="tag">Ouvrir. Rester ouvert.</div>
+        </div>
+      </div>
+      <div class="logo-bg-label" style="color:rgba(255,255,255,0.3);">Fond Navy — version blanche</div>
+    </div>
+    <div class="logo-bg-card" style="background:var(--navy-950);">
+      <div class="logo-showcase">
+        <svg viewBox="0 0 100 100" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="44" fill="none" stroke="#FFFFFF" stroke-width="7"/>
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.35"/>
+          <path d="M 24 50 L 42 70 L 76 30" fill="none" stroke="#C9A227" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="logo-showcase-text">
+          <div class="brand" style="color:var(--white);">Securexia</div>
+          <div class="tag">Ouvrir. Rester ouvert.</div>
+        </div>
+      </div>
+      <div class="logo-bg-label" style="color:rgba(255,255,255,0.25);">Fond sombre — version blanche</div>
+    </div>
+  </div>
+
+  <!-- Taille minimum -->
+  <hr class="rule">
+  <div class="grid-2 gap-16">
+    <div class="logo-rule">
+      <div class="logo-rule-title">Taille minimum</div>
+      <p>L'icône seule ne descend pas en dessous de <strong>20px</strong>. Le lockup horizontal (icône + texte) ne descend pas en dessous de <strong>120px</strong> de large. En dessous, les anneaux se confondent et la coche devient illisible.</p>
+    </div>
+    <div class="logo-rule">
+      <div class="logo-rule-title">Zone de protection</div>
+      <p>Un espace blanc équivalent au rayon de l'anneau extérieur doit être préservé autour du logo sur tous les côtés. Aucun autre élément graphique ne doit empiéter sur cette zone.</p>
+    </div>
+  </div>
+
+  <!-- Do / Don't -->
+  <p class="mt-48 mb-16" style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--neutral-400);">Usages incorrects</p>
+  <div class="do-dont">
+    <div class="dont-block">
+      <div class="header"><span>✕ Ne pas faire</span></div>
+      <div class="body">
+        <p>Changer la couleur de la coche. Elle est toujours Or 700 (#C9A227), quelle que soit la version du logo.</p>
+      </div>
+    </div>
+    <div class="dont-block">
+      <div class="header"><span>✕ Ne pas faire</span></div>
+      <div class="body">
+        <p>Appliquer un dégradé, une ombre portée ou un effet de relief sur le symbole. Il reste toujours plat.</p>
+      </div>
+    </div>
+    <div class="dont-block">
+      <div class="header"><span>✕ Ne pas faire</span></div>
+      <div class="body">
+        <p>Modifier les proportions (étirer, compresser). Le cercle doit toujours rester un cercle parfait.</p>
+      </div>
+    </div>
+    <div class="dont-block">
+      <div class="header"><span>✕ Ne pas faire</span></div>
+      <div class="body">
+        <p>Placer le logo sur un fond coloré vif, photographique chargé, ou dont le contraste est insuffisant pour lire les anneaux.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     06 · VOIX & TON
+══════════════════════════════════════════════════════════ -->
+<section class="section" id="voix">
+  <div class="section-header">
+    <span class="section-index">06 · Voix & ton</span>
+    <h2>Comment Securexia parle</h2>
+    <p class="section-lead">La marque parle comme un expert qui respecte son interlocuteur. Direct. Précis. Jamais condescendant.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="voice-card">
+      <h3>Ce que Securexia est</h3>
+      <div class="voice-examples">
+        <div class="voice-ex good">
+          <div class="voice-ex-icon">✓</div>
+          <p><strong>Expert de terrain</strong> — formulations concrètes, vocabulaire réglementaire maîtrisé mais expliqué quand nécessaire.</p>
+        </div>
+        <div class="voice-ex good">
+          <div class="voice-ex-icon">✓</div>
+          <p><strong>Rassurant sans être paternaliste</strong> — on ne dit pas "ne vous inquiétez pas", on dit "voici ce qu'on va faire".</p>
+        </div>
+        <div class="voice-ex good">
+          <div class="voice-ex-icon">✓</div>
+          <p><strong>Précis sur les délais et résultats</strong> — "pré-visite annuelle", "dossier complet remis 3 semaines avant", "zéro surprise le jour J".</p>
+        </div>
+      </div>
+    </div>
+    <div class="voice-card">
+      <h3>Ce que Securexia n'est pas</h3>
+      <div class="voice-examples">
+        <div class="voice-ex bad">
+          <div class="voice-ex-icon">✕</div>
+          <p><strong>Startup</strong> — pas de "on révolutionne", "on disrupte", "solution innovante". La conformité ERP n'est pas disruptive, elle est sérieuse.</p>
+        </div>
+        <div class="voice-ex bad">
+          <div class="voice-ex-icon">✕</div>
+          <p><strong>Alarmiste</strong> — pas de "risquez-vous une fermeture ?", "votre ERP est en danger". On informe, on ne menace pas.</p>
+        </div>
+        <div class="voice-ex bad">
+          <div class="voice-ex-icon">✕</div>
+          <p><strong>Vague</strong> — pas de "accompagnement sur mesure", "solutions adaptées", "approche globale". Nommer les choses par leur nom réglementaire.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+  <p class="mb-24" style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--neutral-400);">Exemples de reformulation</p>
+  <table class="spec-table">
+    <thead>
+      <tr><th>❌ À éviter</th><th>✅ Préférer</th><th>Pourquoi</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>"Solution de gestion de la conformité"</td>
+        <td>"Service managé de conformité ERP"</td>
+        <td>Vocabulaire précis, ancré dans le secteur</td>
+      </tr>
+      <tr>
+        <td>"Nous vous accompagnons dans votre démarche"</td>
+        <td>"Nous préparons votre dossier et votre équipe pour la commission"</td>
+        <td>Concret, engagé, mesurable</td>
+      </tr>
+      <tr>
+        <td>"Audit Flash : découvrez votre niveau de conformité !"</td>
+        <td>"Audit Flash : 4 heures pour identifier vos risques et vos priorités."</td>
+        <td>Sans ponctuation d'enthousiasme, avec durée et bénéfice précis</td>
+      </tr>
+      <tr>
+        <td>"On est là pour vous !"</td>
+        <td>"Un consultant dédié, joignable directement."</td>
+        <td>Engagement factuel, pas émotionnel</td>
+      </tr>
+      <tr>
+        <td>"Zéro stress, on s'occupe de tout"</td>
+        <td>"Vous gardez le pilotage. Nous gérons la conformité."</td>
+        <td>Respecte l'autonomie du client, positionne le partenariat</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     07 · BOUTONS
+══════════════════════════════════════════════════════════ -->
+<section class="section section-bg-white" id="boutons">
+  <div class="section-header">
+    <span class="section-index">07 · Composants</span>
+    <h2>Boutons</h2>
+    <p class="section-lead">Quatre variantes, trois tailles. La hiérarchie est stricte : un seul bouton primaire par vue.</p>
+  </div>
+
+  <!-- Variantes -->
+  <div class="component-card">
+    <div class="component-preview">
+      <button class="btn btn-primary btn-lg">Audit Flash gratuit</button>
+      <button class="btn btn-gold btn-lg">Demander un devis</button>
+      <button class="btn btn-outline btn-lg">Notre service</button>
+      <button class="btn btn-ghost btn-lg">En savoir plus</button>
+    </div>
+    <div class="component-spec">
+      <div class="spec-item"><div class="spec-label">Primary</div><div class="spec-value">Navy 800, texte blanc</div></div>
+      <div class="spec-item"><div class="spec-label">Gold</div><div class="spec-value">Or 700, texte Navy 950</div></div>
+      <div class="spec-item"><div class="spec-label">Outline</div><div class="spec-value">Bordure Navy, transparent</div></div>
+      <div class="spec-item"><div class="spec-label">Ghost</div><div class="spec-value">Sans bordure, hover neutre</div></div>
+    </div>
+  </div>
+
+  <!-- Tailles -->
+  <div class="component-card mt-16">
+    <div class="component-preview" style="gap:12px;align-items:center;">
+      <button class="btn btn-primary btn-lg">Large — CTA principal</button>
+      <button class="btn btn-primary btn-md">Medium — Actions standards</button>
+      <button class="btn btn-primary btn-sm">Small — Actions dans des cartes</button>
+    </div>
+    <div class="component-spec">
+      <div class="spec-item"><div class="spec-label">Large</div><div class="spec-value">15px · 14px/28px padding</div></div>
+      <div class="spec-item"><div class="spec-label">Medium</div><div class="spec-value">14px · 11px/22px padding</div></div>
+      <div class="spec-item"><div class="spec-label">Small</div><div class="spec-value">13px · 8px/16px padding</div></div>
+    </div>
+  </div>
+
+  <!-- Sur fond sombre -->
+  <div class="component-card mt-16">
+    <div class="component-preview dark">
+      <button class="btn btn-gold btn-lg">Audit Flash gratuit</button>
+      <button class="btn btn-outline-white btn-lg">Notre service</button>
+      <button class="btn btn-primary btn-lg" style="opacity:0.38;cursor:not-allowed;">Désactivé</button>
+    </div>
+    <div class="component-spec">
+      <div class="spec-item"><div class="spec-label">Sur fond sombre</div><div class="spec-value">Gold comme primaire, Outline blanc comme secondaire</div></div>
+      <div class="spec-item"><div class="spec-label">Désactivé</div><div class="spec-value">opacity: 0.38, pointer-events: none</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     08 · BADGES
+══════════════════════════════════════════════════════════ -->
+<section class="section" id="badges">
+  <div class="section-header">
+    <span class="section-index">08 · Composants</span>
+    <h2>Badges & étiquettes</h2>
+    <p class="section-lead">Pour les statuts, catégories et indicateurs de conformité. Toujours sur une ligne, jamais tronqués.</p>
+  </div>
+
+  <div class="component-card">
+    <div class="component-preview" style="flex-wrap:wrap;">
+      <span class="badge badge-navy"><span class="badge-dot"></span>Dossier en cours</span>
+      <span class="badge badge-gold"><span class="badge-dot"></span>Pré-visite planifiée</span>
+      <span class="badge badge-success"><span class="badge-dot"></span>Avis favorable</span>
+      <span class="badge badge-warning"><span class="badge-dot"></span>Prescriptions en attente</span>
+      <span class="badge badge-error"><span class="badge-dot"></span>Non conforme</span>
+      <span class="badge badge-neutral"><span class="badge-dot"></span>En attente</span>
+    </div>
+    <div class="component-spec">
+      <div class="spec-item"><div class="spec-label">Typographie</div><div class="spec-value">DM Sans 600 · 11px · UC · 0.06em</div></div>
+      <div class="spec-item"><div class="spec-label">Padding</div><div class="spec-value">4px vertical · 10px horizontal</div></div>
+      <div class="spec-item"><div class="spec-label">Border-radius</div><div class="spec-value">100px (pill)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     09 · CARTES
+══════════════════════════════════════════════════════════ -->
+<section class="section section-bg-white" id="cartes">
+  <div class="section-header">
+    <span class="section-index">09 · Composants</span>
+    <h2>Cartes</h2>
+    <p class="section-lead">Deux types : la carte de contenu pour les services, la carte statistique pour les chiffres clés.</p>
+  </div>
+
+  <div class="grid-2">
+    <!-- Carte de service -->
+    <div>
+      <div class="card-demo">
+        <div class="card-demo-top">
+          <div class="card-demo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div>
+            <div class="card-demo-title">Pré-visite annuelle</div>
+            <div class="card-demo-subtitle">Audit terrain complet</div>
+          </div>
+        </div>
+        <div class="card-demo-body">
+          <p>Évaluation complète de votre établissement selon le protocole officiel de la commission de sécurité. Identification de toutes les prescriptions à lever avant la visite préfectorale.</p>
+        </div>
+        <div class="card-demo-footer">
+          <span class="badge badge-navy"><span class="badge-dot"></span>Inclus dans le service annuel</span>
+          <button class="btn btn-ghost btn-sm">Détails →</button>
+        </div>
+      </div>
+      <p class="mt-16" style="font-size:12px;color:var(--neutral-400);">Carte de service — header navy, corps blanc</p>
+    </div>
+
+    <!-- Cartes statistiques -->
+    <div>
+      <div class="grid-2 gap-16">
+        <div class="card-stat">
+          <div class="card-stat-num">98<sup>%</sup></div>
+          <div class="card-stat-label">d'avis favorables obtenus après accompagnement</div>
+        </div>
+        <div class="card-stat">
+          <div class="card-stat-num">4<sup>h</sup></div>
+          <div class="card-stat-label">pour un Audit Flash complet sans engagement</div>
+        </div>
+        <div class="card-stat">
+          <div class="card-stat-num">+200</div>
+          <div class="card-stat-label">ERP accompagnés en Guadeloupe</div>
+        </div>
+        <div class="card-stat">
+          <div class="card-stat-num">0</div>
+          <div class="card-stat-label">fermeture administrative pour nos clients</div>
+        </div>
+      </div>
+      <p class="mt-16" style="font-size:12px;color:var(--neutral-400);">Cartes statistiques — bordure or, nombre en Syne 800</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     10 · FORMULAIRES
+══════════════════════════════════════════════════════════ -->
+<section class="section" id="formulaires">
+  <div class="section-header">
+    <span class="section-index">10 · Composants</span>
+    <h2>Formulaires</h2>
+    <p class="section-lead">Les formulaires de contact et d'audit sont le point de conversion principal. Sobres, efficaces, sans friction.</p>
+  </div>
+
+  <div style="max-width:520px;background:var(--white);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-md);">
+    <p style="font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--navy-800);margin-bottom:32px;">Demander un Audit Flash</p>
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div class="form-field">
+        <label class="form-label">Nom & prénom</label>
+        <input class="form-input" type="text" placeholder="Jean Martin" value="">
+      </div>
+      <div class="form-field">
+        <label class="form-label">Établissement</label>
+        <input class="form-input" type="text" placeholder="Mairie de Pointe-à-Pitre" value="">
+        <span class="form-hint">Nom de votre collectivité ou établissement privé</span>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Email professionnel</label>
+        <input class="form-input error" type="email" placeholder="j.martin@mairie-gap.fr" value="jean.martin@">
+        <span class="form-error">Adresse email invalide</span>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Nombre d'ERP à auditer</label>
+        <input class="form-input" type="text" placeholder="1" value="">
+        <span class="form-hint">Vous pouvez couvrir plusieurs établissements dans une convention unique</span>
+      </div>
+      <button class="btn btn-primary btn-lg" style="width:100%;justify-content:center;margin-top:8px;">Demander l'Audit Flash gratuit</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     11 · ICONOGRAPHIE
+══════════════════════════════════════════════════════════ -->
+<section class="section section-bg-white" id="icones">
+  <div class="section-header">
+    <span class="section-index">11 · Iconographie</span>
+    <h2>Principes iconographiques</h2>
+    <p class="section-lead">Icônes de ligne uniquement. Stroke width 1.5–2px. Pas de remplissage, pas d'illustrations. Bibliothèque recommandée : Lucide ou Heroicons.</p>
+  </div>
+
+  <div class="icon-grid">
+    <!-- Icônes SVG inline représentatives -->
+    <div class="icon-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B2D5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      <span>Validation</span>
+    </div>
+    <div class="icon-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B2D5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+      </svg>
+      <span>Dossier</span>
+    </div>
+    <div class="icon-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B2D5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+      <span>Planification</span>
+    </div>
+    <div class="icon-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B2D5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>Établissement</span>
+    </div>
+    <div class="icon-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B2D5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      <span>Délai</span>
+    </div>
+    <div class="icon-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B2D5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+      <span>Sécurité</span>
+    </div>
+    <div class="icon-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B2D5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="8" y1="6" x2="21" y2="6"></line>
+        <line x1="8" y1="12" x2="21" y2="12"></line>
+        <line x1="8" y1="18" x2="21" y2="18"></line>
+        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+      </svg>
+      <span>Prescriptions</span>
+    </div>
+    <div class="icon-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B2D5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
+      <span>Équipe</span>
+    </div>
+    <div class="icon-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B2D5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+      <span>Alerte</span>
+    </div>
+    <div class="icon-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      <span style="color:var(--gold-900);">Certifié</span>
+    </div>
+  </div>
+
+  <hr class="rule">
+  <div class="do-dont">
+    <div class="do-block">
+      <div class="header"><span>✓ À faire</span></div>
+      <div class="body"><p>Utiliser des icônes de la même bibliothèque (Lucide, Heroicons) pour garantir la cohérence du style de trait. Stroke width 1.5px à 32px, 2px au-dessus.</p></div>
+    </div>
+    <div class="dont-block">
+      <div class="header"><span>✕ À éviter</span></div>
+      <div class="body"><p>Mélanger icônes filled (remplies) et icônes outline (trait). Pas d'icônes colorées sauf la coche de validation qui peut prendre l'Or 700.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     12 · APPLICATION
+══════════════════════════════════════════════════════════ -->
+<section class="section" id="application">
+  <div class="section-header">
+    <span class="section-index">12 · Application</span>
+    <h2>Exemples d'application UI</h2>
+    <p class="section-lead">La charte en situation réelle. Header, hero, footer — les trois composants structurants du site.</p>
+  </div>
+
+  <div style="border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);">
+
+    <!-- Mock header -->
+    <div class="mock-header">
+      <div class="mock-header-logo">
+        <svg viewBox="0 0 100 100" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="44" fill="none" stroke="#1B2D5B" stroke-width="8"/>
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#1B2D5B" stroke-width="2" opacity="0.3"/>
+          <path d="M 24 50 L 42 70 L 76 30" fill="none" stroke="#C9A227" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">SECUREXIA</span>
+      </div>
+      <nav class="mock-nav">
+        <a href="#">Notre service</a>
+        <a href="#">Collectivités</a>
+        <a href="#">Établissements</a>
+        <a href="#">À propos</a>
+      </nav>
+      <button class="btn btn-primary btn-sm">Audit Flash gratuit</button>
+    </div>
+
+    <!-- Mock hero -->
+    <div class="mock-hero">
+      <div class="mock-hero-eyebrow">Service managé de conformité ERP · Guadeloupe</div>
+      <h2>Votre commission de sécurité. Sans surprise.</h2>
+      <p>Pré-visites, dossiers, suivi des prescriptions. Nous gérons votre conformité ERP de A à Z pour que votre établissement reste ouvert.</p>
+      <div class="mock-hero-buttons">
+        <button class="btn btn-gold btn-md">Audit Flash gratuit</button>
+        <button class="btn btn-outline-white btn-md">Notre service</button>
+      </div>
+    </div>
+
+    <!-- Mock content -->
+    <div style="background:var(--neutral-50);padding:48px;">
+      <div class="grid-3" style="gap:16px;">
+        <div class="card-stat">
+          <div class="card-stat-num">98<sup>%</sup></div>
+          <div class="card-stat-label">d'avis favorables</div>
+        </div>
+        <div class="card-stat">
+          <div class="card-stat-num">4<sup>h</sup></div>
+          <div class="card-stat-label">pour l'Audit Flash</div>
+        </div>
+        <div class="card-stat">
+          <div class="card-stat-num">0</div>
+          <div class="card-stat-label">fermeture pour nos clients</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mock footer -->
+    <div class="mock-footer">
+      <div>
+        <div class="mock-footer-brand">SECUREXIA · Conformité ERP Guadeloupe</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.2);margin-top:4px;">Ouvrir. Rester ouvert.</div>
+      </div>
+      <div class="mock-footer-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Contact</a>
+        <a href="#">contact@securexia.fr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     13 · INTERDITS
+══════════════════════════════════════════════════════════ -->
+<section class="section section-bg-white" id="interdits">
+  <div class="section-header">
+    <span class="section-index">13 · Interdits</span>
+    <h2>Ce qu'on ne fait pas</h2>
+    <p class="section-lead">Ces règles ne sont pas des suggestions. Elles protègent la cohérence et le sérieux de la marque.</p>
+  </div>
+
+  <div class="grid-3">
+    <div style="background:var(--neutral-50);border-radius:var(--radius-xl);padding:32px;border:1.5px solid #FEE2E2;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--error);margin-bottom:12px;">Couleurs</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Dégradés vifs (rose, violet, orange pop)</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Or sur fond blanc en texte corps (lisibilité insuffisante)</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Fond pleine page couleur vive</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Texte blanc sur fond or</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Plus de deux couleurs de marque sur un même composant</li>
+      </ul>
+    </div>
+    <div style="background:var(--neutral-50);border-radius:var(--radius-xl);padding:32px;border:1.5px solid #FEE2E2;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--error);margin-bottom:12px;">Typographie</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Titraille en corps de texte serif (Times, Georgia)</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Texte trop petit : corps en dessous de 13px</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Majuscules systématiques sur des paragraphes entiers</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Italique en titraille (sauf emphasis ponctuel)</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Plus de deux graisses différentes dans un même paragraphe</li>
+      </ul>
+    </div>
+    <div style="background:var(--neutral-50);border-radius:var(--radius-xl);padding:32px;border:1.5px solid #FEE2E2;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--error);margin-bottom:12px;">Ton & contenu</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Emojis dans les titres ou les corps de texte</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Points d'exclamation dans les CTAs</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Superlatifs non étayés ("le meilleur", "unique")</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Vocabulaire startup ("disrupter", "game-changer")</li>
+        <li style="font-size:13px;color:var(--neutral-700);">✕ Illustrations génériques ou photos de stock souriantes</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- Signature -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:32px 0 0;">
+    <div>
+      <div style="font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--neutral-950);margin-bottom:4px;">Charte Graphique Securexia</div>
+      <div style="font-size:12px;color:var(--neutral-400);">Version 1.0 · Juin 2025 · Usage interne et prestataires</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <svg viewBox="0 0 100 100" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#1B2D5B" stroke-width="7"/>
+        <circle cx="50" cy="50" r="35" fill="none" stroke="#1B2D5B" stroke-width="2" opacity="0.3"/>
+        <path d="M 24 50 L 42 70 L 76 30" fill="none" stroke="#C9A227" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div style="font-family:var(--font-display);font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy-800);">Securexia</div>
+        <div style="font-size:8px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-700);">Ouvrir. Rester ouvert.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</main>
+</body>
+</html>
