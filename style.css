@@ -2489,3 +2489,28 @@ a[data-email]:hover, a[onclick*="openEmail"]:hover {
   .logo { font-size: 17px; }
   .engagements-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Tagline logo ── */
+.logo-tag {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.85;
+  margin-top: 2px;
+  font-style: normal;
+}
+
+/* ── Footer tagline ── */
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px !important;
+}
